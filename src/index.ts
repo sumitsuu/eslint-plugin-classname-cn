@@ -4,40 +4,31 @@ const rules = {
   "use-cn-for-classname": useCnForClassNameRule
 } as const;
 
-const plugin = {
-  rules,
-  configs: {}
-} as {
-  rules: typeof rules;
-  configs: {
-    recommended?: {
-      plugins: string[];
-      rules: Record<string, "error" | "warn" | "off">;
-    };
-    "flat/recommended"?: Array<{
-      plugins: Record<string, unknown>;
-      rules: Record<string, "error" | "warn" | "off">;
-    }>;
-  };
-};
-
-plugin.configs.recommended = {
-  plugins: ["classname-cn"],
-  rules: {
-    "classname-cn/use-cn-for-classname": "error"
-  }
-};
-
-plugin.configs["flat/recommended"] = [
-  {
-    plugins: {
-      "classname-cn": plugin
-    },
+const configs = {
+  recommended: {
+    plugins: ["classname-cn"],
     rules: {
       "classname-cn/use-cn-for-classname": "error"
     }
-  }
-];
+  },
+  "flat/recommended": [
+    {
+      plugins: {
+        "classname-cn": {
+          rules
+        }
+      },
+      rules: {
+        "classname-cn/use-cn-for-classname": "error"
+      }
+    }
+  ]
+} as const;
+
+const plugin = {
+  rules,
+  configs
+};
 
 export default plugin;
-export { rules };
+export { configs, rules };

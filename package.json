@@ -1,7 +1,7 @@
 {
   "name": "eslint-plugin-classname-cn",
-  "version": "0.1.0",
-  "description": "ESLint plugin that enforces using shadcn/ui cn() for dynamic className values in JSX.",
+  "version": "0.1.1",
+  "description": "ESLint plugin that enforces using a cn() utility for dynamic className values in JSX.",
   "license": "MIT",
   "type": "module",
   "main": "./dist/index.cjs",

@@ -1,6 +1,6 @@
 # eslint-plugin-classname-cn
 
-ESLint plugin that enforces using the `cn()` utility from shadcn/ui style setups for dynamic `className` values in JSX.
+ESLint plugin that enforces using a `cn()` utility for dynamic `className` values in JSX.
 
 ## Why
 
@@ -58,7 +58,7 @@ Disallows these dynamic patterns in `className`:
 - `<div className={isOpen && "open"} />`
 - `<div className={`btn ${variant}`} />`
 
-Use your shadcn-style `cn(...)` helper instead.
+Use your `cn(...)` helper instead.
 
 ## Development
 
